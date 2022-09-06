@@ -1,5 +1,7 @@
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,10 +13,10 @@ import java.util.ArrayList;
  * @author laboratorio
  */
 public class Main extends javax.swing.JFrame {
-    
-    //ArrayList <String> listaAluno = new ArrayList<String>();
-    Aluno aluno = new Aluno();
-    
+
+    /**
+     * Creates new form Main
+     */
     public Main() {
         initComponents();
     }
@@ -28,160 +30,304 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttongroup_sexo = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jTextField_nome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField_curso = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea = new javax.swing.JTextArea();
-        jButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        textfield_nome = new javax.swing.JTextField();
+        textfield_sobrenome = new javax.swing.JTextField();
+        textfield_idade = new javax.swing.JTextField();
+        textfield_email = new javax.swing.JTextField();
+        textfield_cpf = new javax.swing.JTextField();
+        textfield_nascionalidade = new javax.swing.JTextField();
+        textfield_cidade = new javax.swing.JTextField();
+        textfield_telefone = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        radiobutton_masculino = new javax.swing.JRadioButton();
+        radiobutton_feminino = new javax.swing.JRadioButton();
+        radiobutton_na = new javax.swing.JRadioButton();
+        checkbox_soldador = new javax.swing.JCheckBox();
+        checkbox_montador = new javax.swing.JCheckBox();
+        checkbox_torneiro = new javax.swing.JCheckBox();
+        checkbox_operador = new javax.swing.JCheckBox();
+        checkbox_secretario = new javax.swing.JCheckBox();
+        checkbox_faxineiro = new javax.swing.JCheckBox();
+        checkbox_vendedor = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("nome:");
 
-        jLabel2.setText("curso:");
+        jLabel2.setText("sobrenome:");
 
-        jTextArea.setColumns(20);
-        jTextArea.setRows(5);
-        jScrollPane1.setViewportView(jTextArea);
+        jLabel3.setText("idade:");
 
-        jButton.setText("cadastrar");
-        jButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("cpf:");
 
-        jButton1.setText("ListarPorCurso");
+        jLabel6.setText("nascionalidade:");
+
+        jLabel7.setText("cidade:");
+
+        jLabel8.setText("email:");
+
+        jLabel9.setText("telefone:");
+
+        jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Listar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel10.setText("sexo:");
+
+        jLabel11.setText("vagas desejadas:");
+
+        buttongroup_sexo.add(radiobutton_masculino);
+        radiobutton_masculino.setText("Masculino");
+        radiobutton_masculino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                radiobutton_masculinoActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Limpar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttongroup_sexo.add(radiobutton_feminino);
+        radiobutton_feminino.setText("Feminino");
+
+        buttongroup_sexo.add(radiobutton_na);
+        radiobutton_na.setText("Na");
+
+        checkbox_soldador.setText("soldador");
+        checkbox_soldador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                checkbox_soldadorActionPerformed(evt);
             }
         });
+
+        checkbox_montador.setText("montador");
+
+        checkbox_torneiro.setText("torneiro");
+
+        checkbox_operador.setText("operador de maquina");
+
+        checkbox_secretario.setText("secretario");
+        checkbox_secretario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkbox_secretarioActionPerformed(evt);
+            }
+        });
+
+        checkbox_faxineiro.setText("faxineiro");
+        checkbox_faxineiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkbox_faxineiroActionPerformed(evt);
+            }
+        });
+
+        checkbox_vendedor.setText("vendedor");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addComponent(checkbox_soldador)
+                            .addComponent(checkbox_montador)
+                            .addComponent(checkbox_torneiro))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField_curso, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(jTextField_nome)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(checkbox_faxineiro)
+                            .addComponent(checkbox_secretario)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(checkbox_operador)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkbox_vendedor))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(radiobutton_masculino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radiobutton_feminino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radiobutton_na))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textfield_nome)
+                                .addComponent(textfield_sobrenome)
+                                .addComponent(textfield_idade)
+                                .addComponent(textfield_email)
+                                .addComponent(textfield_cpf)
+                                .addComponent(textfield_nascionalidade)
+                                .addComponent(textfield_cidade)
+                                .addComponent(textfield_telefone, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textfield_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField_curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textfield_sobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfield_idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(textfield_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfield_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(textfield_nascionalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(textfield_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(textfield_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(radiobutton_masculino)
+                    .addComponent(radiobutton_feminino)
+                    .addComponent(radiobutton_na))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkbox_soldador)
+                    .addComponent(checkbox_operador)
+                    .addComponent(checkbox_vendedor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkbox_montador)
+                    .addComponent(checkbox_secretario))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addComponent(jButton1)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(61, 61, 61))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(checkbox_torneiro)
+                            .addComponent(checkbox_faxineiro))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActionPerformed
-        
-        
-        aluno.setNome(jTextField_nome.getText());
-        aluno.setCurso(jTextField_curso.getText());
-        
-        aluno.aluno.add(aluno);
-        
-        
-       
-        
-       
-    }//GEN-LAST:event_jButtonActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        /*String texto = "";
-        for(String i: listaAluno){
-            texto = texto + i + "\n";
-        }
-        jTextArea.setText(texto);*/
-        Ordena ordena = new Ordena();
-        ordena.mostrarlista(aluno.aluno);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       // listaAluno.clear();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String texto = "";
-        String tmp;
-        
-        /*for(int i=0; i<listaAluno.size();i++){
-            
-            if(Character.getNumericValue(listaAluno.get(i).charAt(0))>Character.getNumericValue(listaAluno.get(i+1).charAt(0)))
-            {
-              tmp = listaAluno.get(i);
-              listaAluno.set(i, listaAluno.get(i+1));
-              listaAluno.set(i+1, tmp);
-                
-            }
+        String vaga = "";
+        String sexo = "";
+        int idade = Integer.parseInt(textfield_idade.getText());
+        int telefone = Integer.parseInt(textfield_telefone.getText());
+        int cpf = Integer.parseInt(textfield_cpf.getText());
+        if(checkbox_soldador.isSelected()==true){
+            vaga = vaga+" soldador";
+        }
+        if(checkbox_montador.isSelected()==true){
+            vaga = vaga+" montador";
+        }
+        if(checkbox_torneiro.isSelected()==true){
+            vaga = vaga+" torneiro";
+        }
+        if(checkbox_operador.isSelected()==true){
+            vaga = vaga+" operador";
+        }
+        if(checkbox_secretario.isSelected()==true){
+            vaga = vaga+" secretario";
+        }
+        if(checkbox_faxineiro.isSelected()==true){
+            vaga = vaga+" faxineiro";
+        }
+        if(checkbox_vendedor.isSelected()==true){
+            vaga = vaga+" vendedor";
+        }
+        if(radiobutton_masculino.isSelected()== true){
+            sexo = "masculino";
+        }
+        if(radiobutton_feminino.isSelected()== true){
+            sexo = "feminino";
+        }
+        if(radiobutton_na.isSelected()== true){
+            sexo = "na";
         }
         
-        for(String i: listaAluno){
-            texto = texto + i + "\n";
+        Pessoas p = new Pessoas(textfield_nome.getText(),
+                textfield_sobrenome.getText(),textfield_email.getText(),
+                telefone,cpf,textfield_cidade.getText()
+                ,textfield_nascionalidade.getText(),idade,sexo,vaga);
+        p.motrarPessoa();
+        Arquivo arquivo = new Arquivo();
+        try {
+            arquivo.escreverArquivo(p.getNome(), p.getSobrenome(),
+                    p.getEmail(), p.getTelefone(), p.getCpf(), p.getCidade(),
+                    p.getNascionalidade(), p.getIdade(), p.getSexo()
+                    , p.getVagadesejada());
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        jTextArea.setText(texto);
-        */
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void radiobutton_masculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobutton_masculinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radiobutton_masculinoActionPerformed
+
+    private void checkbox_soldadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_soldadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkbox_soldadorActionPerformed
+
+    private void checkbox_faxineiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_faxineiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkbox_faxineiroActionPerformed
+
+    private void checkbox_secretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_secretarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkbox_secretarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,15 +365,36 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttongroup_sexo;
+    private javax.swing.JCheckBox checkbox_faxineiro;
+    private javax.swing.JCheckBox checkbox_montador;
+    private javax.swing.JCheckBox checkbox_operador;
+    private javax.swing.JCheckBox checkbox_secretario;
+    private javax.swing.JCheckBox checkbox_soldador;
+    private javax.swing.JCheckBox checkbox_torneiro;
+    private javax.swing.JCheckBox checkbox_vendedor;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea;
-    private javax.swing.JTextField jTextField_curso;
-    private javax.swing.JTextField jTextField_nome;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton radiobutton_feminino;
+    private javax.swing.JRadioButton radiobutton_masculino;
+    private javax.swing.JRadioButton radiobutton_na;
+    private javax.swing.JTextField textfield_cidade;
+    private javax.swing.JTextField textfield_cpf;
+    private javax.swing.JTextField textfield_email;
+    private javax.swing.JTextField textfield_idade;
+    private javax.swing.JTextField textfield_nascionalidade;
+    private javax.swing.JTextField textfield_nome;
+    private javax.swing.JTextField textfield_sobrenome;
+    private javax.swing.JTextField textfield_telefone;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,0 +1,25 @@
+
+
+
+
+nome: teste
+sobrenome: a
+email: a
+telefone: 12
+cpf: 12
+cidade a
+nascionalidade: a
+idade: 12
+sexo: feminino
+vagas desejadas:  soldador montador torneiro
+
+nome: tetste
+sobrenome: a
+email: 12
+telefone: 12
+cpf: 12
+cidade 1
+nascionalidade: a
+idade: 12
+sexo: masculino
+vagas desejadas:  soldador montador torneiro
